@@ -1,0 +1,10 @@
+{
+  "name": "dottie-ai-assistant",
+  "version": "1.0.0",
+  "description": "An AI assistant that lives in GroupMe: plans from your group chats onto your calendar, Canvas, reminders and memory.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": { "test": "node --test \"test/*-test.mjs\"" }
+}

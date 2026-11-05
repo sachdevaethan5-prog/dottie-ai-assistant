@@ -1,0 +1,9 @@
+# Copy to .dev.vars for `npx wrangler dev` (git ignores .dev.vars). Never commit real values.
+OPENROUTER_API_KEY=
+GROUPME_TOKEN=
+GROUPME_BOT_ID=
+CALLBACK_KEY=
+ICLOUD_EMAIL=
+ICLOUD_APP_PASSWORD=
+CANVAS_FEED_URL=
+CANVAS_TOKEN=

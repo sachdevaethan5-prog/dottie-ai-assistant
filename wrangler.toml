@@ -1,0 +1,45 @@
+name = "dottie-ai-assistant"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[triggers]
+crons = ["* * * * *", "*/10 * * * *", "0 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dottie"
+# Paste the id that `npx wrangler d1 create dottie` prints.
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+
+[vars]
+# Your first name, the way the assistant should call you.
+NAME = ""
+# What the assistant calls itself.
+ASSISTANT_NAME = "Dottie"
+# Your school, for "who am I" (optional; the Canvas address is used when empty).
+SCHOOL = ""
+# Where your weather is for (decimal degrees). Leave empty to turn weather off.
+LAT = ""
+LON = ""
+TIMEZONE = "America/New_York"
+MORNING_HOUR = "7"
+# Hour of the daily full scan of your chats; empty means an hour before MORNING_HOUR.
+SCAN_HOUR = ""
+# When the evening nudge about Canvas work not turned in goes out (24-hour clock).
+NUDGE_HOUR = "20"
+# Chats searched when you ask "what did <person> say" without naming one: a pattern on chat
+# names, like "Robotics|Chess Club". Empty searches your most recently active chats.
+SEARCH_CHATS = ""
+# Which of your iCloud calendars it writes to; empty picks "Home", "Calendar" or "Personal".
+CALENDAR_NAME = ""
+# Web searches the assistant may run a day (about $0.007 each on your OpenRouter key).
+WEB_SEARCHES_PER_DAY = "30"
+# Check exact names and prices at openrouter.ai/models.
+MODEL = "anthropic/claude-haiku-5.5"
+# Reads group chats for events. Same model as chat by default, since accuracy matters more
+# than the few dollars a month; a cheaper one (e.g. google/gemini-2.5-flash-lite) works too.
+EXTRACT_MODEL = "anthropic/claude-haiku-5.5"
+
+# Secrets (npx wrangler secret put NAME), never in this file:
+# OPENROUTER_API_KEY, ICLOUD_EMAIL, ICLOUD_APP_PASSWORD, GROUPME_TOKEN, GROUPME_BOT_ID,
+# CANVAS_FEED_URL, CANVAS_TOKEN (optional), CALLBACK_KEY
